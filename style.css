@@ -1,0 +1,367 @@
+:root {
+    --bg-color: #1A1A1A; /* 深邃黑 */
+    --text-main: #F7F7F7; /* 米白色 */
+    --text-muted: #888888; /* 灰色辅色 */
+    --accent-color: #FF6B6B; /* 珊瑚红 */
+    --card-bg: #242424;
+    --card-border: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif; /* 正文使用 Inter */
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo, .hero-name {
+    font-family: 'Space Grotesk', sans-serif; /* 标题使用 Space Grotesk */
+    font-weight: 700;
+}
+
+/* 导航栏 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero 区域 */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    position: relative;
+}
+
+.parallax-bg {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 107, 107, 0.15) 0%, rgba(26, 26, 26, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    transition: transform 0.1s ease-out;
+}
+
+.hero-name {
+    font-size: 5rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.hero-slogan-cn {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    max-width: 600px;
+}
+
+.hero-slogan-en {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+}
+
+/* 按钮 */
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #1A1A1A;
+    border: 2px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 107, 107, 0.2);
+}
+
+/* 通用 Section 样式 */
+.section {
+    padding: 6rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: left;
+    color: var(--accent-color);
+}
+
+/* 关于我 */
+.about-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+}
+
+.about-text-en {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.about-img-placeholder {
+    background: var(--card-bg);
+    border: 2px dashed var(--card-border);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    min-height: 300px;
+}
+
+/* 网格与卡片 */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+/* 技能卡片 */
+.skill-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card .highlight-text {
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.skill-card span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* 作品卡片 */
+.work-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.work-img {
+    height: 180px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: transform 0.5s ease;
+}
+
+.work-card:hover .work-img {
+    transform: scale(1.05); /* 悬停图片放大 */
+}
+
+.work-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.work-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.work-content p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.work-role {
+    font-size: 0.8rem !important;
+    color: #666 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.card-link {
+    margin-top: auto;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.card-link:hover {
+    color: var(--accent-color);
+}
+
+/* 联系我 */
+.contact-desc {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 0.5rem;
+}
+
+.contact-desc-en {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+}
+
+.contact-item .icon {
+    font-size: 1.5rem;
+}
+
+.contact-item a {
+    color: var(--text-main);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: var(--accent-color);
+}
+
+.btn-mail {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--card-border);
+}
+
+/* 滚动淡入动画类 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 响应式 */
+@media (max-width: 992px) {
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+    .hero-name { font-size: 4rem; }
+}
+
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 1rem; padding: 1rem; }
+    .hero { height: auto; padding-top: 120px; padding-bottom: 60px; }
+    .hero-name { font-size: 3rem; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .section-title { text-align: center; }
+    .about-text { text-align: center; }
+    .nav-links { gap: 1rem; font-size: 0.85rem; }
+}

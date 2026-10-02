@@ -3,19 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的应用 - 官网</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; text-align: center; padding: 50px 20px; background-color: #f9f9f9; color: #333; }
-        h1 { color: #007aff; font-size: 2.5em; }
-        p { font-size: 1.2em; color: #666; }
-        .btn { display: inline-block; margin-top: 20px; padding: 12px 30px; background-color: #007aff; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; }
-        .btn:hover { background-color: #0056b3; }
-    </style>
+    <title>redbbit | 独立开发者</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Google 字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>欢迎来到我的应用官网</h1>
-    <p>这是一个简洁、优雅的应用展示页面。</p>
-    <p>功能正在持续更新中，敬请期待！</p>
-    <a href="#" class="btn">立即下载</a>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">redbbit</div>
+        <ul class="nav-links">
+            <li><a href="#hero">首页</a></li>
+            <li><a href="#about">关于</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#works">作品</a></li>
+            <li><a href="#contact">联系</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1. Hero 区 -->
+    <section id="hero" class="hero fade-in">
+        <!-- 鼠标跟随的抽象背景元素 -->
+        <div class="parallax-bg" id="parallax-bg"></div>
+        
+        <h1 class="hero-name">redbbit</h1>
+        <p class="hero-slogan-cn">资深大肥鱼观察员，专注优雅吃白饭。</p>
+        <p class="hero-slogan-en">Senior Big Fat Fish Observer. Mastering the Art of Eating Plain Rice.</p>
+        
+        <div class="hero-buttons">
+            <a href="#works" class="btn btn-primary">查看作品 (View Works)</a>
+        </div>
+    </section>
+
+    <!-- 2. 关于我 -->
+    <section id="about" class="section fade-in">
+        <div class="grid-2">
+            <div class="about-text">
+                <h2 class="section-title">关于我</h2>
+                <p>一个沉迷于“大肥鱼吃白饭”无法自拔的独立开发者。日常是与大肥鱼斗智斗勇，在 Bug 的海洋里钓鱼，在代码的田野里种米。</p>
+                <p>我的核心竞争力不是写代码，而是看着大肥鱼吃白饭时，依然能保持内心的平静，并顺手把 Bug 修了。</p>
+                <p class="about-text-en">An indie dev obsessed with watching the Big Fat Fish eat plain rice. My daily routine is a battle of wits with the fish—fishing for bugs in the ocean of code. I don't just write code; I cultivate rice while maintaining zen as the fish eats it.</p>
+            </div>
+            <div class="about-img-placeholder">
+                <span>🐟 大肥鱼极简插画</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 技能栈 -->
+    <section id="skills" class="section fade-in">
+        <h2 class="section-title">技能栈</h2>
+        <div class="grid-3">
+            <div class="card skill-card">
+                <h3>前端</h3>
+                <p class="highlight-text">看鱼吃白饭</p>
+                <span>HTML / CSS / JavaScript / React / Vue</span>
+            </div>
+            <div class="card skill-card">
+                <h3>后端</h3>
+                <p class="highlight-text">种白饭</p>
+                <span>Node.js / Python / Go / PostgreSQL / MongoDB</span>
+            </div>
+            <div class="card skill-card">
+                <h3>工具与摸鱼</h3>
+                <p class="highlight-text">斗智斗勇</p>
+                <span>Git / Docker / Webflow / Figma / 大肥鱼监控系统</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 作品集 -->
+    <section id="works" class="section fade-in">
+        <h2 class="section-title">作品集</h2>
+        <div class="grid-2">
+            <div class="card work-card">
+                <div class="work-img" style="background-color: #2a2a2a;">TodoApp 占位图</div>
+                <div class="work-content">
+                    <h3>TodoApp | 任务清单</h3>
+                    <p>将待办事项列出来，方便查看，唯一优点是没广告。</p>
+                    <p class="work-role">角色：独立ai开发 | 技术栈：Python</p>
+                    <a href="#" class="card-link">查看详情 (View Details) →</a>
+                </div>
+            </div>
+            <div class="card work-card">
+                <div class="work-img" style="background-color: #333333;">png转ico 占位图</div>
+                <div class="work-content">
+                    <h3>png转ico</h3>
+                    <p>将png图片转化为ico，最大支持输出256*256像素大小。</p>
+                    <p class="work-role">角色：独立ai开发 | 技术栈：Python</p>
+                    <a href="#" class="card-link">查看详情 (View Details) →</a>
+                </div>
+            </div>
+            <div class="card work-card">
+                <div class="work-img" style="background-color: #1f1f1f;">未竟之言 占位图</div>
+                <div class="work-content">
+                    <h3>未竟之言 | EndWhat</h3>
+                    <p>开发中，将来可能推出，属于ai伴侣软件。</p>
+                    <p class="work-role">角色：独立ai开发 | 技术栈：Python等</p>
+                    <a href="#" class="card-link">查看详情 (View Details) →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 联系我 -->
+    <section id="contact" class="section fade-in">
+        <h2 class="section-title">立即联系</h2>
+        <p class="contact-desc">想和我交流如何在DSH和Web看着大肥鱼吃白饭？欢迎随时来信。</p>
+        <p class="contact-desc-en">Wanna discuss the art of watching fish eat rice at DeepSeek Harness or Website, or have some puzzles you hard? Drop me a line!</p>
+        
+        <div class="contact-methods">
+            <div class="contact-item">
+                <span class="icon">✉️</span>
+                <a href="mailto:2242858980@qq.com" class="highlight-text">2242858980@qq.com</a>
+            </div>
+            <div class="contact-item">
+                <span class="icon">💻</span>
+                <a href="https://github.com/redbbit" target="_blank" class="highlight-text">github.com/redbbit</a>
+            </div>
+            <div class="contact-item">
+                <span class="icon">💬</span>
+                <span class="highlight-text">微信公众号：兔子行迹</span>
+            </div>
+            <div class="contact-item">
+                <span class="icon">📺</span>
+                <a href="https://space.bilibili.com/2143271342" target="_blank" class="highlight-text">Bilibili：兔子行迹</a>
+            </div>
+        </div>
+        
+        <a href="mailto:2242858980@qq.com" class="btn btn-primary btn-mail">写邮件给我</a>
+    </section>
+
+    <footer>
+        <p>© 2026 redbbit. 保留所有权利。看着大肥鱼吃白饭中...</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
