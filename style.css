@@ -226,38 +226,41 @@ h1, h2, h3, .logo, .hero-name {
     font-size: 0.9rem;
 }
 
-/* 作品卡片 */
-/* 你原来的完美代码，保持不变 */
+/* ========== 作品集卡片（专属覆盖） ========== */
 .work-card {
-    padding: 0;
-    overflow: hidden;
+    padding: 0; /* 重点：覆盖全局的 1.8rem，让图片贴边 */
+    overflow: hidden; /* 配合圆角，裁切溢出的图片 */
     display: flex;
     flex-direction: column;
-    background: var(--bg-card); /* 确保背景色在 */
-    border: 1px solid var(--border); /* 确保边框在 */
-    border-radius: 16px; /* 确保圆角在 */
+    /* 不写 background 和 border，完美继承全局的 .card 样式 */
 }
 
+/* 悬停动画不额外写，完美继承全局的 .card:hover（上浮+红边） */
+
+/* 顶部图片或占位图区域 */
 .work-img {
-    height: 180px;
     width: 100%;
+    height: 180px; /* 固定高度，整齐好看 */
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #1f1f1f; /* 占位符专用的深色背景 */
     color: var(--text-muted);
     font-size: 0.9rem;
-    transition: transform 0.5s ease;
-    /* 占位符的背景色，如果是图片会自动覆盖 */
-    background-color: #1f1f1f; 
+    border-bottom: 1px solid var(--border); /* 图片和底部文字的细微分界线 */
 }
 
-.work-card:hover .work-img {
-    transform: scale(1.05);
+/* 针对真实图片 <img> 标签的特殊处理 */
+img.work-img {
+    display: block;
+    object-fit: cover; /* 保证图片铺满且不变形 */
+    background-color: transparent;
 }
 
+/* 底部文字内容区（补回内边距） */
 .work-content {
-    padding: 1.5rem;
-    flex-grow: 1;
+    padding: 1.5rem; /* 把刚才卡片丢掉的 1.8rem 在这里补回来，根据你截图微调为 1.5rem */
+    flex-grow: 1; /* 撑开高度，保证多个卡片底部对齐 */
     display: flex;
     flex-direction: column;
 }
@@ -279,23 +282,17 @@ h1, h2, h3, .logo, .hero-name {
     margin-bottom: 1.5rem !important;
 }
 
+/* 底部按钮 */
 .card-link {
     margin-top: auto;
-    color: var(--text-main);
+    color: var(--text);
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s;
 }
 
 .card-link:hover {
-    color: var(--accent-color);
-}
-
-/* ====== 👇 新增的规则：当 work-img 是真实图片时 👇 ====== */
-img.work-img {
-    display: block; /* 去掉图片底部的幽灵留白 */
-    object-fit: cover; /* 让图片铺满 180px 的高度，且不变形 */
-    background-color: transparent; /* 去掉占位符的深色背景 */
+    color: var(--accent);
 }
 
 /* 联系我 */
