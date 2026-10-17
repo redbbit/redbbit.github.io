@@ -227,11 +227,15 @@ h1, h2, h3, .logo, .hero-name {
 }
 
 /* 作品卡片 */
+/* 你原来的完美代码，保持不变 */
 .work-card {
     padding: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    background: var(--bg-card); /* 确保背景色在 */
+    border: 1px solid var(--border); /* 确保边框在 */
+    border-radius: 16px; /* 确保圆角在 */
 }
 
 .work-img {
@@ -243,10 +247,12 @@ h1, h2, h3, .logo, .hero-name {
     color: var(--text-muted);
     font-size: 0.9rem;
     transition: transform 0.5s ease;
+    /* 占位符的背景色，如果是图片会自动覆盖 */
+    background-color: #1f1f1f; 
 }
 
 .work-card:hover .work-img {
-    transform: scale(1.05); /* 悬停图片放大 */
+    transform: scale(1.05);
 }
 
 .work-content {
@@ -283,6 +289,13 @@ h1, h2, h3, .logo, .hero-name {
 
 .card-link:hover {
     color: var(--accent-color);
+}
+
+/* ====== 👇 新增的规则：当 work-img 是真实图片时 👇 ====== */
+img.work-img {
+    display: block; /* 去掉图片底部的幽灵留白 */
+    object-fit: cover; /* 让图片铺满 180px 的高度，且不变形 */
+    background-color: transparent; /* 去掉占位符的深色背景 */
 }
 
 /* 联系我 */
